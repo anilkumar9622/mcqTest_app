@@ -54,7 +54,7 @@ const App = () => {
 
   const onFinish = async (values) => {
     try {
-      const result = await axios.post('http://localhost:4041/signup', values)
+      const result = await axios.post('https://online-quiz-be.herokuapp.com//signup', values)
       // navigate("/signin")
       setIsModalVisible(true);
       // }
@@ -68,7 +68,7 @@ const App = () => {
   };
   const [data, setData] = useState()
   const getData = async (event) => {
-    await axios.get(`http://localhost:4041/find`)
+    await axios.get(`https://online-quiz-be.herokuapp.com/find`)
       .then(res => {
         setData(res);
       }).catch(err => console.log(err))
@@ -85,7 +85,7 @@ const App = () => {
   const [errMsg, setErrMsg] = useState()
   const onSubmit = async (value) => {
     try {
-      const d = await axios.patch(`http://localhost:4041/otp_verification?_id=${_id}`, value);
+      const d = await axios.patch(`https://online-quiz-be.herokuapp.com/otp_verification?_id=${_id}`, value);
       navigate("/login")
       console.log('otp: ', d);
     } catch (err) {
