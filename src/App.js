@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { useRoutes } from 'react-router-dom';
+import Exam_portal from './pages/exam_portal'
+// import Welcome from './pages/welcome';
+import Signup from './pages/signup';
+import Login from './pages/login';
+import Instruction from './pages/instruction';
+import ProtectedRoute from './pages/protectedRoute';
 function App() {
+
+  const routes = useRoutes(
+    [
+      
+      {
+        path: '/', element: <Signup />
+      },
+      {
+        path: '/login', element: <Login />
+      },
+      {
+        path: '/instruction', element: <Instruction/>
+      },
+      { path:'/exam_portal', element:<ProtectedRoute page={ <Exam_portal/>} />
+  },
+     
+    ]
+  )
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {routes}
+    </>
   );
 }
 
