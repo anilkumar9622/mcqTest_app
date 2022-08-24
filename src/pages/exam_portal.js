@@ -95,7 +95,7 @@ export default function Exam_portal() {
 
 
   const getData = async () => {
-    await axios.get(`https://online-exam-manage-system.herokuapp.com?page=${prevNextPage}`)
+    await axios.get(` https://online-exam-manage-system.herokuapp.com/start?page=${prevNextPage}`)
       .then(res => {
         setData(res);
       }).catch(err => console.log(err))
@@ -103,7 +103,7 @@ export default function Exam_portal() {
 
   const userAns = async () => {
     try {
-      axios.patch(`https://online-exam-manage-system.herokuapp.com/saveAns?_id=${i?._id}`, { userRightAns: ans }).then((res) => {
+      axios.patch(` https://online-exam-manage-system.herokuapp.com/saveAns?_id=${i?._id}`, { userRightAns: ans }).then((res) => {
 
         console.log(res)
       })

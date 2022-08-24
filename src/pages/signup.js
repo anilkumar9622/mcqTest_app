@@ -54,7 +54,7 @@ const App = () => {
 
   const onFinish = async (values) => {
     try {
-      const result = await axios.post('https://online-quiz-be.herokuapp.com//signup', values)
+      const result = await axios.post('https://online-quiz-be.herokuapp.com/signup', values)
       // navigate("/signin")
       setIsModalVisible(true);
       // }

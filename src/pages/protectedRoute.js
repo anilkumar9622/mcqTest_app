@@ -7,21 +7,21 @@ export default function ProtectedRoute(props) {
     const page = props.page;
     const token = localStorage.getItem("token");
     const [timeOut, setTimeOut] = useState(token)
-    //     useEffect(() => {
-    //         if(!token){
-    //         setTimeOut(null)}
-    //     })
-    //    if(token){ 
-    //     setTimeout(function(){
+        useEffect(() => {
+            if(!token){
+            setTimeOut(null)}
+        })
+       if(token){ 
+        setTimeout(function(){
 
-    //         localStorage.removeItem("token")
+            localStorage.removeItem("token")
 
-    //         setTimeOut(null)
+            setTimeOut(null)
 
 
-    //       },60000)
+          },60000)
 
-    //    }
+       }
 
     return token ? page : <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '0rem', background: "#f7f6f2", height: '100vh' }}><div style={{
         display: 'flex', justifyContent: 'center', alignItems: 'center',
